@@ -10,7 +10,7 @@ export default function Start() {
   }
 
   return (
-    <Button onClick={handleClick} variant='contained'>
+    <Button onClick={handleClick} variant='contained' sx={{ marginTop: 4 }}>
       Start!
     </Button>
   )

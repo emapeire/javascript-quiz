@@ -15,7 +15,10 @@ import { gradientDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 const Question = ({ info }: { info: Question }) => {
   return (
-    <Card variant='outlined' sx={{ textAlign: 'left', bgcolor: '#222', p: 2 }}>
+    <Card
+      variant='outlined'
+      sx={{ textAlign: 'left', bgcolor: '#222', p: 2, marginTop: 4 }}
+    >
       <Typography variant='h5' component='h2'>
         {info.question}
       </Typography>
@@ -23,17 +26,17 @@ const Question = ({ info }: { info: Question }) => {
         language='javascript'
         style={gradientDark}
         customStyle={{
-          borderRadius: '8px',
+          borderRadius: '4px',
           paddingInline: '1rem',
           paddingBlock: '2rem'
         }}
       >
         {info.code}
       </SyntaxHighlighter>
-      <List sx={{ bgcolor: '#333', borderRadius: '8px' }} disablePadding>
+      <List sx={{ bgcolor: '#333', borderRadius: '4px' }} disablePadding>
         {info.answers.map((answer, index) => (
           <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ borderRadius: '8px' }}>
+            <ListItemButton sx={{ borderRadius: '4px' }} divider>
               <ListItemText primary={answer} sx={{ textAlign: 'center' }} />
             </ListItemButton>
           </ListItem>
