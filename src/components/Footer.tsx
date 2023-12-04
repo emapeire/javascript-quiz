@@ -44,7 +44,7 @@ export default function Footer() {
         </p>
       </div>
       <div style={{ marginTop: '1rem' }}>
-        <Button onClick={() => reset()}>Reset the game</Button>
+        <Button onClick={() => reset()}>Reset game</Button>
       </div>
     </footer>
   )
