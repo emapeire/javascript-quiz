@@ -2,11 +2,11 @@ import { Container, Stack, Typography } from '@mui/material'
 import './App.css'
 import { JavaScriptLogo } from './image/javascript-logo'
 import Start from './components/Start'
-import { useQuestionStore } from './store/question'
+import { useQuestionsStore } from './store/questions'
 import Game from './components/Game'
 
 export default function App() {
-  const questions = useQuestionStore((state) => state.questions)
+  const questions = useQuestionsStore((state) => state.questions)
 
   return (
     <main>
