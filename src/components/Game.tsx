@@ -94,7 +94,7 @@ export default function Game() {
         gap={2}
         alignItems='center'
         justifyContent='center'
-        sx={{ marginTop: 2 }}
+        sx={{ marginTop: 4 }}
       >
         <IconButton
           onClick={goPreviousQuestion}
