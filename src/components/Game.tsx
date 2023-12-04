@@ -45,8 +45,8 @@ const Question = ({ info }: { info: QuestionType }) => {
         p: 2,
         textAlign: 'left',
         marginTop: 4,
-        minWidth: '600px',
-        minHeight: '400px'
+        minWidth: '60vw',
+        minHeight: '50vh'
       }}
     >
       <Typography variant='h5'>{info.question}</Typography>
@@ -111,7 +111,16 @@ export default function Game() {
           <ArrowForwardIos />
         </IconButton>
       </Stack>
-      <Question info={questionInfo} />
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          minHeight: '60vh'
+        }}
+      >
+        <Question info={questionInfo} />
+      </div>
       <Footer />
     </>
   )
