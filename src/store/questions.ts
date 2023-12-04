@@ -12,6 +12,7 @@ interface State {
   goNextQuestion: () => void
   goPreviousQuestion: () => void
   reset: () => void
+  allQuestionsAnswered: () => boolean
 }
 
 export const useQuestionsStore = create<State>()(
@@ -52,7 +53,8 @@ export const useQuestionsStore = create<State>()(
             newQuestions[questionIndex] = {
               ...questionInfo,
               isCorrectUserAnswer,
-              userSelectedAnswer: answerIndex
+              userSelectedAnswer: answerIndex,
+              answered: true
             }
             // 7. update the state
             set({ questions: newQuestions }, false, 'SELECT_ANSWER')
@@ -82,6 +84,11 @@ export const useQuestionsStore = create<State>()(
 
           reset: () => {
             set({ currentQuestion: 0, questions: [] }, false, 'RESET')
+          },
+
+          allQuestionsAnswered: () => {
+            const { questions } = get()
+            return questions.every((q) => q.answered)
           }
         }
       },

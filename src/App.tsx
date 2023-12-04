@@ -4,9 +4,11 @@ import { JavaScriptLogo } from './image/javascript-logo'
 import Start from './components/Start'
 import { useQuestionsStore } from './store/questions'
 import Game from './components/Game'
+import Results from './components/Results'
 
 export default function App() {
   const questions = useQuestionsStore((state) => state.questions)
+  const allAnswered = useQuestionsStore((state) => state.allQuestionsAnswered)
 
   return (
     <main>
@@ -23,7 +25,8 @@ export default function App() {
           </Typography>
         </Stack>
         {questions.length === 0 && <Start />}
-        {questions.length > 0 && <Game />}
+        {questions.length > 0 && !allAnswered() && <Game />}
+        {allAnswered() && <Results />}
       </Container>
     </main>
   )
