@@ -14,6 +14,24 @@ import SyntaxHighlighter from 'react-syntax-highlighter'
 import { gradientDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 
 const Question = ({ info }: { info: Question }) => {
+  const selectAnswer = useQuestionStore((state) => state.selectedAnswer)
+
+  const handleClick = (answerIndex: number) => {
+    return () => selectAnswer(info.id, answerIndex)
+  }
+
+  const getBackgroundColor = (index: number) => {
+    const { userSelectedAnswer, correctAnswer } = info
+
+    if (userSelectedAnswer === null) return 'transparent'
+    if (index !== correctAnswer && index !== userSelectedAnswer)
+      return 'transparent'
+    if (index === correctAnswer) return '#4caf50'
+    if (index === userSelectedAnswer) return '#f44336'
+
+    return 'transparent'
+  }
+
   return (
     <Card
       variant='outlined'
@@ -33,10 +51,14 @@ const Question = ({ info }: { info: Question }) => {
       >
         {info.code}
       </SyntaxHighlighter>
-      <List sx={{ bgcolor: '#333', borderRadius: '4px' }} disablePadding>
+      <List sx={{ bgcolor: '#333' }} disablePadding>
         {info.answers.map((answer, index) => (
-          <ListItem key={index} disablePadding>
-            <ListItemButton sx={{ borderRadius: '4px' }} divider>
+          <ListItem key={index} disablePadding divider>
+            <ListItemButton
+              disabled={info.userSelectedAnswer !== null}
+              onClick={handleClick(index)}
+              sx={{ bgcolor: getBackgroundColor(index) }}
+            >
               <ListItemText primary={answer} sx={{ textAlign: 'center' }} />
             </ListItemButton>
           </ListItem>
