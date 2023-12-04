@@ -26,7 +26,7 @@ export default function App() {
         </Stack>
         {questions.length === 0 && <Start />}
         {questions.length > 0 && !allAnswered() && <Game />}
-        {allAnswered() && <Results />}
+        {questions.length > 0 && allAnswered() && <Results />}
       </Container>
     </main>
   )

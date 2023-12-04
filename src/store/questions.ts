@@ -54,7 +54,7 @@ export const useQuestionsStore = create<State>()(
               ...questionInfo,
               isCorrectUserAnswer,
               userSelectedAnswer: answerIndex,
-              answered: true
+              isAnswered: true
             }
             // 7. update the state
             set({ questions: newQuestions }, false, 'SELECT_ANSWER')
@@ -88,7 +88,7 @@ export const useQuestionsStore = create<State>()(
 
           allQuestionsAnswered: () => {
             const { questions } = get()
-            return questions.every((q) => q.answered)
+            return questions.every((q) => q.isAnswered)
           }
         }
       },
