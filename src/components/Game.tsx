@@ -1,11 +1,9 @@
 import {
   Card,
-  IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
-  Stack,
   Typography
 } from '@mui/material'
 import { useQuestionStore } from '../store/question'
@@ -16,8 +14,8 @@ import { gradientDark } from 'react-syntax-highlighter/dist/esm/styles/hljs'
 const Question = ({ info }: { info: Question }) => {
   const selectAnswer = useQuestionStore((state) => state.selectedAnswer)
 
-  const handleClick = (answerIndex: number) => {
-    return () => selectAnswer(info.id, answerIndex)
+  const handleClick = (answerIndex: number) => () => {
+    selectAnswer(info.id, answerIndex)
   }
 
   const getBackgroundColor = (index: number) => {
