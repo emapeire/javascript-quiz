@@ -8,15 +8,15 @@ export const Results = () => {
 
   return (
     <div style={{ marginTop: '16px' }}>
-      <h1>¡Tus resultados</h1>
+      <h1>Your score: </h1>
 
       {/* <strong>
-        <p>✅ {correct} correctas</p>
-        <p>❌ {incorrect} incorrectas</p>
+        <p>✅ {correct} corrects</p>
+        <p>❌ {incorrect} incorrects</p>
       </strong> */}
 
       <div style={{ marginTop: '16px' }}>
-        <Button onClick={() => reset()}>¡Empezar de nuevo!</Button>
+        <Button onClick={() => reset()}>Try again!</Button>
       </div>
     </div>
   )

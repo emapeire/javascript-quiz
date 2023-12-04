@@ -50,7 +50,11 @@ const Question = ({ info }: { info: QuestionType }) => {
     >
       <Typography variant='h5'>{info.question}</Typography>
 
-      <SyntaxHighlighter language='javascript' style={gradientDark}>
+      <SyntaxHighlighter
+        language='javascript'
+        style={gradientDark}
+        customStyle={{ padding: '1rem' }}
+      >
         {info.code}
       </SyntaxHighlighter>
 
@@ -90,6 +94,7 @@ export default function Game() {
         gap={2}
         alignItems='center'
         justifyContent='center'
+        sx={{ marginTop: 2 }}
       >
         <IconButton
           onClick={goPreviousQuestion}
