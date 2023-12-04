@@ -7,7 +7,7 @@ export default function Footer() {
   const reset = useQuestionsStore((state) => state.reset)
 
   return (
-    <footer style={{ marginTop: '2rem' }}>
+    <footer>
       <div style={{ display: 'flex', justifyContent: 'center', gap: 32 }}>
         <p>
           ✅ Corrects:{' '}
@@ -43,7 +43,7 @@ export default function Footer() {
           >{`${unanswered}`}</strong>
         </p>
       </div>
-      <div style={{ marginTop: '2rem' }}>
+      <div style={{ marginTop: '1rem' }}>
         <Button onClick={() => reset()}>Reset the game</Button>
       </div>
     </footer>

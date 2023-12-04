@@ -44,9 +44,7 @@ const Question = ({ info }: { info: QuestionType }) => {
         bgcolor: '#222',
         p: 2,
         textAlign: 'left',
-        marginTop: 4,
-        minWidth: '60vw',
-        minHeight: '50vh'
+        minWidth: '60vw'
       }}
     >
       <Typography variant='h5'>{info.question}</Typography>
@@ -95,7 +93,7 @@ export default function Game() {
         gap={2}
         alignItems='center'
         justifyContent='center'
-        sx={{ marginTop: 4 }}
+        sx={{ margin: '1rem' }}
       >
         <IconButton
           onClick={goPreviousQuestion}
