@@ -45,7 +45,8 @@ const Question = ({ info }: { info: QuestionType }) => {
         p: 2,
         textAlign: 'left',
         marginTop: 4,
-        maxWidth: '100%'
+        minWidth: '600px',
+        minHeight: '400px'
       }}
     >
       <Typography variant='h5'>{info.question}</Typography>
