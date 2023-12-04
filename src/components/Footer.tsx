@@ -8,7 +8,7 @@ export default function Footer() {
 
   return (
     <footer style={{ marginTop: '2rem' }}>
-      <strong>{`✅ ${correct} corrects - ❌ ${incorrect} incorrects - ❓ ${unanswered} without answer`}</strong>
+      <strong>{`✅ ${correct} corrects - ❌ ${incorrect} incorrects - ❓ ${unanswered} unanswered`}</strong>
       <div style={{ marginTop: '2rem' }}>
         <Button onClick={() => reset()}>Reset the game</Button>
       </div>
