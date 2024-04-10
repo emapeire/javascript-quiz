@@ -40,7 +40,7 @@ export const useQuestionsStore = create<State>()(
             // 2. clone the questions array
             const newQuestions = structuredClone(questions)
             const questionIndex = newQuestions.findIndex(
-              (q) => q.id === questionId
+              (q: any) => q.id === questionId
             )
             // 3. update the question with the new answer
             const questionInfo = newQuestions[questionIndex]
